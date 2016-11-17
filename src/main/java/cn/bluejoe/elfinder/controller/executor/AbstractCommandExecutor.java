@@ -149,7 +149,7 @@ public abstract class AbstractCommandExecutor implements CommandExecutor
 		Map<String, Object> info = new HashMap<String, Object>();
 		info.put("hash", fsi.getHash());
 		info.put("mime", fsi.getMimeType());
-		info.put("ts", fsi.getLastModified());
+		info.put("ts", fsi.getLastModified()/1000);//elfinder.full.js_2.1.6,  line664,  the unit of this.today is second.
 		info.put("size", fsi.getSize());
 		info.put("read", fsi.isReadable(fsi) ? 1 : 0);
 		info.put("write", fsi.isWritable(fsi) ? 1 : 0);
